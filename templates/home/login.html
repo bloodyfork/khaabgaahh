@@ -1,4 +1,4 @@
-
+{% load static %}
 
 <div class="container">
 	<div class="screen">
@@ -49,7 +49,8 @@
 }
 
 body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);
+	{#background: linear-gradient(90deg, #C7C5F4, #776BCC);#}
+    background-image: url("{% static 'image/baclground_img.jpg' %}")
 }
 
 .container {
@@ -60,11 +61,11 @@ body {
 }
 
 .screen {
-	background: linear-gradient(90deg, #5D54A4, #7C78B8);
+	background: linear-gradient(90deg, #1edc09, #407137);
 	position: relative;
 	height: 600px;
 	width: 360px;
-	box-shadow: 0px 0px 24px #5C5696;
+	box-shadow: 0px 0px 24px #56da26;
 }
 
 .screen__content {
@@ -101,7 +102,7 @@ body {
 .screen__background__shape2 {
 	height: 220px;
 	width: 220px;
-	background: #6C63AC;
+	background: #1a6400;
 	top: -172px;
 	right: 0;
 	border-radius: 32px;
@@ -110,7 +111,7 @@ body {
 .screen__background__shape3 {
 	height: 540px;
 	width: 190px;
-	background: linear-gradient(270deg, #5D54A4, #6A679E);
+	background: linear-gradient(270deg, #5cc537, #1a6400);
 	top: -24px;
 	right: 0;
 	border-radius: 32px;
@@ -119,7 +120,7 @@ body {
 .screen__background__shape4 {
 	height: 400px;
 	width: 200px;
-	background: #7E7BB9;
+	background: #1a6400;
 	top: 420px;
 	right: 50px;
 	border-radius: 60px;
@@ -172,8 +173,8 @@ body {
 	display: flex;
 	align-items: center;
 	width: 100%;
-	color: #4C489D;
-	box-shadow: 0px 2px 2px #5C5696;
+	color: rgb(15, 81, 0);
+	box-shadow: 0px 2px 2px rgba(32, 111, 5, 0.3);
 	cursor: pointer;
 	transition: .2s;
 }

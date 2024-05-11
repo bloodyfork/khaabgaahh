@@ -120,7 +120,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    BASE_DIR / "static",
+    "static",
+    'venv/lib/python3.10/site-packages/admin_material/static',
+    # os.path.join(BASE_DIR, 'static')
 ]
 
 MEDIA_URL = "/media/"

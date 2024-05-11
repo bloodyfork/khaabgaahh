@@ -12,7 +12,7 @@ class LoginStudent(LoginView):
 
     def post(self, request, *args, **kwargs):
 
-        username = request.POST.get('phone')
+        username = request.POST.get('student_number')
         password = request.POST.get('password')
         user = authenticate(request, phone=username, password=password)
         if user is not None:
