@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.views import LoginStudent
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', LoginStudent.as_view(), name='student_login')
 ]
