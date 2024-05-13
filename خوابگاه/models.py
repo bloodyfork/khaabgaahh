@@ -7,6 +7,15 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 class User(AbstractUser):
+
+    GENDER_CHOICES = (
+        ('پسر', 'پسر'),
+        ('دختر', 'دختر'),
+    )
+
+    gender = models.CharField(verbose_name='جنسیت', max_length=4, choices=GENDER_CHOICES, default='دختر', blank=True,null=True)
+    phone = models.CharField(verbose_name='شماره تلفن',max_length=11, blank=True, null=True)
+
     objects = MyUserManager()
     student_number = models.CharField(max_length=13, unique=True, verbose_name='شماره دانشجویی')
     USERNAME_FIELD = 'student_number'

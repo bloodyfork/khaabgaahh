@@ -6,7 +6,8 @@ from .models import Room
 
 
 class UserAdmin(admin.ModelAdmin):
-    pass
+    fields = ('student_number', 'first_name', 'last_name', 'password', 'gender', 'phone')
+    list_display = ('student_number', 'first_name', 'last_name', 'gender', 'phone')
 
 
 class RoomAdmin(admin.ModelAdmin):
