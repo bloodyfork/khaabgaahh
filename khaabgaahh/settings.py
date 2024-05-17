@@ -29,11 +29,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'admin_material.apps.AdminMaterialDashboardConfig',
+    # 'admin_material.apps.AdminMaterialDashboardConfig',
 
     # 'admin_interface',
     # 'colorfield',
 
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'خوابگاه',
-    'core'
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     "static",
     'venv/lib/python3.10/site-packages/admin_material/static',
-    # os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
 MEDIA_URL = "/media/"
