@@ -16,19 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import LoginStudent, ReservePanel, logout_user, ChangePasswordView, change_password
+from core.views import LoginStudent, logout_user, ChangePasswordView, change_password
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required
+from خوابگاه.views import student_panel
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('', LoginStudent.as_view(), name='student_login'),
-                  path('panel', login_required(ReservePanel.as_view()), name='reserve'),
+                  path('panel', login_required(student_panel), name='reserve'),
                   path('logout', logout_user, name='LogOut'),
                   path('change_password', change_password, name='change_password'),
 
+                  # path('student_panel', student_panel, name='student_panel'),
 
+                  # API
                   path('change_pass/<str:student_number>', ChangePasswordView.as_view(), name='change_pass'),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

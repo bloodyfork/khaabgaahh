@@ -38,11 +38,6 @@ def logout_user(request):
     return redirect(to='student_login')
 
 
-class ReservePanel(ListView):
-    template_name = 'home/reserve.html'
-    model = Room
-
-
 def change_password(request):
     return render(request, template_name='home/change_password.html')
 
